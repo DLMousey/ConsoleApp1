@@ -54,7 +54,7 @@ namespace ConsoleApp1.Modules.Commands
             
             if (member == ctx.Member)
             {
-                await ctx.RespondAsync(member.Mention + " You didn't give you a username, you " + randomInsult(true));    
+                await ctx.RespondAsync(member.Mention + " You didn't give me a username to mock, you " + randomInsult(true));    
             }
             
             await ctx.RespondAsync(newMessage);
