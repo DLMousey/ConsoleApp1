@@ -15,7 +15,19 @@ namespace ConsoleApp1
 
         public static void Main(string[] args)
         {
-            Logger.Log("Hello World!", Logger.Level.VERB);
+            if (Config.get.discordToken != "")
+            {
+                var config = new DiscordConfiguration
+                {
+                    Token = Config.get.discordToken,
+                    TokenType = TokenType.Bot
+                };
+                Run(config).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            else
+            {
+                Logger.Log("Please set your Discord Token in the config.json file", Logger.Level.EXEP);
+            }
         }
 
         private static async Task Run(DiscordConfiguration config)
