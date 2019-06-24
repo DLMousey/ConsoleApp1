@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 
+using ConsoleApp1.Modules.Core;
+
 namespace ConsoleApp1
 {
     class Program
@@ -13,6 +15,7 @@ namespace ConsoleApp1
 
         public static void Main(string[] args)
         {
+            Logger.Log("Hello World!", Logger.Level.VERB);
         }
 
         private static async Task Run(DiscordConfiguration config)
