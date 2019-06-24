@@ -40,6 +40,11 @@ namespace ConsoleApp1
                 StringPrefix = "!" // TODO: make customizible
             });
 
+            /* 
+             * Registers all the commands using the ICommand interface
+             */
+            Commands.Load();
+
             await Task.Delay(-1);
         }
     }
