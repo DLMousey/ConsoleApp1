@@ -1,2 +1,2 @@
 # Start bot
-ConsoleApp1
+./ConsoleApp1
