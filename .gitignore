@@ -1,6 +1,9 @@
 # Visual Studio Code
 .vscode
 
+# Idea files
+.idea
+
 # User-specific files
 *.suo
 *.user
