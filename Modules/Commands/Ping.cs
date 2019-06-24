@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 
+using ConsoleApp1.Interfaces.Core;
 using ConsoleApp1.Modules.Core;
 
 namespace ConsoleApp1.Modules.Commands
 {
-    public class Ping
+    public class Ping : ICommand
     {
 
         /* 
