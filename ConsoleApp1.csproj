@@ -6,5 +6,6 @@
   <ItemGroup>
     <PackageReference Include="DSharpPlus" Version="3.2.3"/>
     <PackageReference Include="DSharpPlus.CommandsNext" Version="3.2.3"/>
+    <Content Include="start.sh" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
