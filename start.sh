@@ -1,0 +1,2 @@
+# Start bot
+./ConsoleApp1
