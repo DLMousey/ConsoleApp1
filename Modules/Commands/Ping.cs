@@ -8,7 +8,7 @@ using ConsoleApp1.Modules.Core;
 
 namespace ConsoleApp1.Modules.Commands
 {
-    public class Ping : ICommand
+    public class Ping : BaseCommand
     {
 
         /* 
@@ -24,7 +24,7 @@ namespace ConsoleApp1.Modules.Commands
         /* 
          * Registers this class with all its commands for use in the bot
          */
-        public void Register()
+        override public void Register()
         {
             Program.CommandsNext.RegisterCommands<Ping>();
             Logger.Log("Set up ping command!", Logger.Level.INFO);
