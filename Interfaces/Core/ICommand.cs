@@ -5,7 +5,7 @@ namespace ConsoleApp1.Interfaces.Core
 {
     public interface ICommand
     {
-        Task Command(CommandContext ctx, string argument = "");
+        Task Command(CommandContext ctx);
         void Register();
     }
 }
