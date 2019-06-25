@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 
 using ConsoleApp1.Modules.Core;
 using ConsoleApp1.Interfaces.Core;
+using ConsoleApp1.Interfaces.Core.Database;
 
 namespace ConsoleApp1
 {
@@ -13,9 +14,29 @@ namespace ConsoleApp1
         private class Fields : IConfig
         {
             /* 
+             * Implementation of IDatabase for a PostgreSQL connection
+             */
+            private class PostgreSQL : IDatabase
+            {
+                public string ip { get; set; }
+                public int port { get; set; }
+                public string user { get; set; }
+                public string password { get; set; }
+
+                public PostgreSQL()
+                {
+                    ip = "127.0.0.1";
+                    port = 5432;
+                    user = "";
+                    password = "";
+                }
+            }
+
+            /* 
              * Implementation of IConfig interface for Fields class
              */
             public string discordToken { get; set; }
+            public IDatabase postgresql { get; set; }
 
             /* 
              * Initializes Fields() class with initial values so the
@@ -24,6 +45,7 @@ namespace ConsoleApp1
             public Fields()
             {
                 discordToken = "";
+                postgresql = new PostgreSQL();
             }
         }
 
