@@ -35,6 +35,7 @@ namespace ConsoleApp1.Modules.Commands
                 }
             }
 
+            await ctx.TriggerTypingAsync();
             int targetIndex = member.Equals(ctx.Member) ? 1 : 0;
             char[] lastMessageParts = targetUserMessages[targetIndex].Content.ToCharArray();
             for (int i = 0; i < lastMessageParts.Length; i++)
@@ -50,31 +51,12 @@ namespace ConsoleApp1.Modules.Commands
             }
             
             string newMessage = new string(lastMessageParts);
-            await ctx.TriggerTypingAsync();
-            
             if (member == ctx.Member)
             {
-                await ctx.RespondAsync(member.Mention + " You didn't give me a username to mock, you " + randomInsult(true));    
+                await ctx.RespondAsync($"{ctx.Member.Mention} you didn't give a username to mock, you idiot.");
             }
             
             await ctx.RespondAsync(newMessage);
-        }
-
-        public string randomInsult(bool prependAbsolute = false)
-        {
-            string[] insults =
-            {
-                "chimp",
-                "spanner",
-                "moron",
-                "reject",
-                "idiot"
-            };
-
-            Random random = new Random();
-            int randomIndex = random.Next(0, insults.Length - 1);
-
-            return (prependAbsolute) ? "absolute " + insults[randomIndex] : insults[randomIndex];
         }
 
         public void Register()
