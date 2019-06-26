@@ -52,7 +52,7 @@ namespace ConsoleApp1.Modules.Commands
             
             if (missingTargetUser)
             {
-                await ctx.RespondAsync($"{member.Mention} you didn't give you a username, you moron");
+                await ctx.RespondAsync($"{member.Mention} you didn't give me a username to mock, you moron");
             }
             
             string newMessage = new string(lastMessageParts);
